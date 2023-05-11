@@ -1,0 +1,496 @@
+[
+    {
+        "id": "4cae52ebc1c51f42",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "340c2723d1368c8f",
+        "type": "mqtt-broker",
+        "name": "MQTT Broker EMQX",
+        "broker": "broker.emqx.io",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cd082c688cd43ca1",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "78508d47c131eeed",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ee6cced51d45ee9a",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "cd082c688cd43ca1",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e91c5a64112755ce",
+        "type": "rpi-sensehatsim in",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "motion": false,
+        "env": true,
+        "stick": false,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "d1f6bd81a84b59f9"
+            ]
+        ]
+    },
+    {
+        "id": "a6704de862a5e33c",
+        "type": "mqtt out",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "topic": "A00273290/output",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "340c2723d1368c8f",
+        "x": 1310,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1031333407e849e4",
+        "type": "mqtt in",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "topic": "A00273290/input",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "340c2723d1368c8f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "07f5c172f51a8a36",
+                "9b67c0fd6b9124c4"
+            ]
+        ]
+    },
+    {
+        "id": "9499ab9555520fd0",
+        "type": "debug",
+        "z": "4cae52ebc1c51f42",
+        "name": "Sending data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "66e523cf55028d4e",
+        "type": "function",
+        "z": "4cae52ebc1c51f42",
+        "name": "function 1",
+        "func": "const messages = msg.payload.temperature + \",\" + msg.payload.humidity + \",\" + msg.payload.pressure;\n\nreturn [{ payload: messages }];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 380,
+        "wires": [
+            [
+                "a6704de862a5e33c",
+                "9499ab9555520fd0"
+            ]
+        ]
+    },
+    {
+        "id": "07f5c172f51a8a36",
+        "type": "rpi-sensehatsim out",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "x": 800,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d01b5b11d9e2a676",
+        "type": "debug",
+        "z": "4cae52ebc1c51f42",
+        "name": "To ESP",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9b67c0fd6b9124c4",
+        "type": "debug",
+        "z": "4cae52ebc1c51f42",
+        "name": "Input to PI",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d1f6bd81a84b59f9",
+        "type": "delay",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 400,
+        "wires": [
+            [
+                "66e523cf55028d4e"
+            ]
+        ]
+    },
+    {
+        "id": "5cce31d57a28122d",
+        "type": "ui_button",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "group": "ee6cced51d45ee9a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Pos2",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Pos2",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1630,
+        "y": 1460,
+        "wires": [
+            [
+                "47e80558dddbe48f"
+            ]
+        ]
+    },
+    {
+        "id": "087c04360f15f708",
+        "type": "ui_button",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "group": "ee6cced51d45ee9a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Pos1",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Pos1",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1630,
+        "y": 1520,
+        "wires": [
+            [
+                "47e80558dddbe48f"
+            ]
+        ]
+    },
+    {
+        "id": "00a369f7c52062ba",
+        "type": "ui_button",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "group": "ee6cced51d45ee9a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Pos3",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Pos3",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1630,
+        "y": 1400,
+        "wires": [
+            [
+                "47e80558dddbe48f"
+            ]
+        ]
+    },
+    {
+        "id": "d0b9e48ebfa0c383",
+        "type": "ui_button",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "group": "ee6cced51d45ee9a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Home",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "home",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1630,
+        "y": 1340,
+        "wires": [
+            [
+                "47e80558dddbe48f"
+            ]
+        ]
+    },
+    {
+        "id": "47e80558dddbe48f",
+        "type": "mqtt out",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "topic": "A00273290/esp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "340c2723d1368c8f",
+        "x": 1900,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "85f4ab9b6d398226",
+        "type": "function",
+        "z": "4cae52ebc1c51f42",
+        "name": "function 2",
+        "func": "var messages = \"\"\nif (msg.payload.temperature < 10){\n    messages = \"Home\"\n} else if (msg.payload.temperature < 15){\n    messages = \"Pos1\"\n} else if (msg.payload.temperature < 20) {\n    messages = \"Pos2\"\n} \nelse {\n    messages = \"Pos3\"\n}\nreturn [{ payload: messages }];",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 460,
+        "wires": [
+            [
+                "6f28c7d349dd984f"
+            ]
+        ]
+    },
+    {
+        "id": "6f28c7d349dd984f",
+        "type": "mqtt out",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "topic": "A00273290/esp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "340c2723d1368c8f",
+        "x": 1280,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "828044271e301fda",
+        "type": "mqtt in",
+        "z": "4cae52ebc1c51f42",
+        "name": "",
+        "topic": "A00273290/ESP",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "340c2723d1368c8f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1100,
+        "y": 180,
+        "wires": [
+            [
+                "d01b5b11d9e2a676"
+            ]
+        ]
+    }
+]
